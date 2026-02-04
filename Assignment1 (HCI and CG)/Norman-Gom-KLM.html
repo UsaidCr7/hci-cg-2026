@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Norman vs. GOMS vs. KLM – Coffee Kiosk Example</title>
+
+  <style>
+    /* Minimal styling allowed in Lab 01: color only */
+    .row-norman { background-color: #fff3cd; } /* warm amber */
+    .row-goms   { background-color: #e7f3ff; } /* light blue */
+    .row-klm    { background-color: #e9f7ef; } /* light green */
+
+    .key-takeaway {
+      background-color: #fff3cd;
+      padding: 0.5em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page header -->
+  <header>
+    <h1>Norman vs. GOMS vs. KLM</h1>
+    <p>Real-world example: Ordering Coffee on a Touchscreen Counter</p>
+  </header>
+
+  <!-- Primary navigation -->
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="CV.html">CV</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Analysis.html">Interaction Analysis</a></li>
+      <li><a href="Norman-Gom-KLM.html" aria-current="page">Norman–Gom–KLM</a></li>
+      
+    </ul>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+
+    <!-- Comparison section -->
+    <section>
+      <h2>Clean Comparison (Real-Life Coffee Touchscreen Counter )</h2>
+
+      <table border="1">
+        <caption>
+          Model-based evaluation: what each model explains vs. predicts
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Category</th>
+            <th scope="col">What it Explains</th>
+            <th scope="col">What it Predicts</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="row-norman">
+            <th scope="row">Norman</th>
+            <td>Cognitive / descriptive</td>
+            <td>Understanding of buttons, errors, system feedback, gulfs of execution and evaluation</td>
+            <td>❌ Nothing (cannot predict how fast the order is made)</td>
+          </tr>
+
+          <tr class="row-goms">
+            <th scope="row">GOMS</th>
+            <td>Predictive / analytic</td>
+            <td>Task structure: selecting coffee type, size, extras, payment</td>
+            <td>✔ Relative efficiency of menu paths (e.g., shortcut buttons vs. scrolling)</td>
+          </tr>
+
+          <tr class="row-klm">
+            <th scope="row">KLM</th>
+            <td>Predictive / quantitative</td>
+            <td>Low-level actions: tap, swipe, hand movement, system wait</td>
+            <td>✔ Execution time to complete the order</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- KLM operators -->
+    <section>
+      <h2>KLM Operators (Execution-Level Primitives for Coffee Ordering)</h2>
+
+      <p>
+        In a touchscreen kiosk, KLM can model the execution of taps, swipes, hand movements, and waiting.
+        The user is assumed to be familiar with the interface.
+      </p>
+
+      <table border="1">
+        <caption>
+          KLM operators for the coffee kiosk
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Operator</th>
+            <th scope="col">Name</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">Example</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">K</th>
+            <td>Keystroking</td>
+            <td>Pressing keys on a virtual keypad</td>
+            <td>Entering loyalty number on screen</td>
+          </tr>
+
+          <tr>
+            <th scope="row">B</th>
+            <td>Button press</td>
+            <td>Touching screen buttons</td>
+            <td>Select "Latte" or "Size: Medium"</td>
+          </tr>
+
+          <tr>
+            <th scope="row">P</th>
+            <td>Pointing</td>
+            <td>Moving finger to touch target</td>
+            <td>Move finger to "Add Extra Shot" checkbox</td>
+          </tr>
+
+          <tr>
+            <th scope="row">H</th>
+            <td>Homing</td>
+            <td>Switching between keyboard (if used) and touchscreen</td>
+            <td>Keyboard → touch screen for payment</td>
+          </tr>
+
+          <tr>
+            <th scope="row">D</th>
+            <td>Drawing</td>
+            <td>Drag gestures on touchscreen</td>
+            <td>Swipe to scroll menu</td>
+          </tr>
+
+          <tr>
+            <th scope="row">M</th>
+            <td>Mental preparation</td>
+            <td>Thinking before choosing an option</td>
+            <td>Deciding which size and extras to select</td>
+          </tr>
+
+          <tr>
+            <th scope="row">R</th>
+            <td>System response</td>
+            <td>Waiting for system feedback</td>
+            <td>Screen loading new menu options</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Worked example -->
+    <section>
+      <h2>Worked Example: Ordering a Latte</h2>
+
+      <p>
+        Task: User orders a medium latte with an extra shot, pays, and confirms.
+      </p>
+
+      <ol>
+        <li>Think which coffee and size to select</li>
+        <li>Move hand to touchscreen</li>
+        <li>Tap "Latte"</li>
+        <li>Tap "Medium"</li>
+        <li>Tap "Extra Shot"</li>
+        <li>Move to payment keypad if needed</li>
+        <li>Enter card number / tap "Pay"</li>
+        <li>Wait for confirmation screen</li>
+      </ol>
+
+      <p>One possible KLM operator sequence:</p>
+
+      <pre>
+M P B[Latte] 
+P B[Medium] 
+P B[Extra Shot] 
+H[keypad] M K[CardNumber] 
+P B[Pay] 
+R
+      </pre>
+
+      <p>
+        This models only execution-level actions. Planning and decision-making are not included.
+      </p>
+    </section>
+
+    <!-- Key takeaways -->
+    <section>
+      <h2>Key Takeaways</h2>
+
+      <blockquote class="key-takeaway">
+        <p>
+          <strong>
+            KLM operators (K, B, P, H, D, M, R) can be applied to real-world tasks like touchscreen ordering to predict execution time for expert users.
+          </strong>
+        </p>
+      </blockquote>
+
+      <blockquote class="key-takeaway">
+        <p>
+          <strong>
+            GOMS provides task-level structure, Norman explains cognitive understanding, errors, and feedback—together they help analyze usability.
+          </strong>
+        </p>
+      </blockquote>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="index.html">Back to Home</a></p>
+  </footer>
+
+</body>
+</html>

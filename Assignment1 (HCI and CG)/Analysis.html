@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Norman vs. GOMS – Go Dutch Payment Example/Splitwise</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .norman-goms-match {
+      background-color: #fff3cd;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #000;
+      text-align: left;
+      vertical-align: top;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <header>
+    <h1>Norman vs. GOMS: Go Dutch Example/Split-wise</h1>
+    <p>Task: User ensures fair payment among attendees at a meal</p>
+  </header>
+
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="Answers(lab).html">Lab Questions - Answered</a>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="analysis.html" aria-current="page">Interaction Analysis</a></li>
+      </li><a href="Norman-Gom-KLM.html">Norman-Gom-KLM</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section>
+      <h2>Norman vs. GOMS Comparison Table – Go Dutch Payment/Split-wise</h2>
+
+      <table>
+        <caption>Comparison of Norman’s stages and GOMS concepts for splitting a meal payment</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Norman’s Stage</th>
+            <th scope="col">Go Dutch Payment/Split-wise</th>
+            <th scope="col">GOMS Interpretation &amp; Rationale</th>
+            <th scope="col">Alignment Analysis</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="norman-goms-match">
+            <th scope="row">Goal ↔ GOAL</th>
+            <td>User wants to pay only for what they ate, or ensure the total is split fairly among all attendees.</td>
+            <td>Goal: Fair-Payment.<br>Top-level objective in GOMS.</td>
+            <td>✅ Direct correspondence – Norman’s goal aligns with GOMS goal.</td>
+          </tr>
+
+          <tr class="norman-goms-match">
+            <th scope="row">Plan ↔ METHOD &amp; Selection Rules</th>
+            <td>
+              User decides method: pay individually, split equally, or use an app to calculate shares.  
+              Considers fairness, convenience, and speed.
+            </td>
+            <td>
+              Method: Identify each person’s order → calculate share → pay appropriate amount.<br>
+              Selection Rules: Use “split by item” if detailed bill is available; else “equal split.”
+            </td>
+            <td>✅ Conceptual match – Norman’s planning stage corresponds to GOMS method selection.</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Specify</th>
+            <td>
+              Determine the exact cost per person; verify items ordered; check rounding or discounts.
+            </td>
+            <td>
+              Not explicitly modeled in basic GOMS.<br>
+              Operators ([K] typing, [P] pointing) represent low-level input for calculations or app use.
+            </td>
+            <td>⚠️ Divergence – Norman emphasizes specification and verification; GOMS abstracts into operators.</td>
+          </tr>
+
+          <tr class="norman-goms-match">
+            <th scope="row">Execute ↔ OPERATOR</th>
+            <td>
+              Enter amounts in payment app or terminal; confirm payment; distribute receipts if necessary.
+            </td>
+            <td>
+              Operators: Mouse clicks, keystrokes; KLM can estimate timing of each primitive action.
+            </td>
+            <td>✅ Direct match – execution stage aligns with GOMS operators.</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Perceive / Interpret / Evaluate</th>
+            <td>
+              Observe confirmation; check that each person paid correctly; verify no one overpaid or underpaid.
+            </td>
+            <td>
+              GOMS assumes perfect execution and does not allocate cognitive evaluation time.
+            </td>
+            <td>⚠️ Divergence – Norman emphasizes feedback and evaluation; GOMS abstracts perception and evaluation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Quick Note</h2>
+      <p>
+        This example demonstrates how Norman’s interaction stages and GOMS task decomposition apply to a real-world “Go Dutch/Split-wise” payment scenario.  
+        Highlighted rows indicate direct correspondences between the models.  
+        Focus on semantic HTML, table accessibility, and mapping user cognitive actions to task decomposition.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    
+    <p><a href="index.html">Back to Home</a></p>
+  </footer>
+
+</body>
+</html>
